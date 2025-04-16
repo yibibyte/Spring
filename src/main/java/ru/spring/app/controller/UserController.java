@@ -1,5 +1,6 @@
 package ru.spring.app.controller;
 
+import org.springframework.http.MediaType;
 import ru.spring.app.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,15 +23,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/users")
     public String listUsers(Model model) {
-        log.info("Handling /users request");
+        model.addAttribute("pageTitle", "User List");
         model.addAttribute("users", userService.getAllUsers());
         return "users/list";
     }
 
-    @GetMapping("/create")
+    @GetMapping(value = "/create", produces = MediaType.TEXT_HTML_VALUE)
     public String showCreateForm(Model model) {
+        log.debug("Accessing create form");
         model.addAttribute("user", new UserDTO());
         return "users/create";
     }

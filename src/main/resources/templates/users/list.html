@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::section}, ~{::actions})}">
 <head>
   <title>User List</title>
 </head>
 <body>
-<section>
-  <h1>User List</h1>
-  <a th:href="@{/users/create}" class="btn btn-primary">Add User</a>
-
-  <table class="table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${users}">
-      <td th:text="${user.id}"></td>
-      <td th:text="${user.name}"></td>
-      <td th:text="${user.email}"></td>
-      <td>
-        <a th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a>
-        <a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a>
-      </td>
-    </tr>
-    </tbody>
+<section th:fragment="content">
+  <!-- Контент страницы -->
+  <table class="table table-striped">
+    <!-- Таблица пользователей -->
   </table>
 </section>
+
+<div th:fragment="actions">
+  <a th:href="@{/users/create}" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Add User
+  </a>
+</div>
 </body>
 </html>
