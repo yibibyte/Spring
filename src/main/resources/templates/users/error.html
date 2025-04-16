@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<head>
+    <title>Error</title>
+</head>
+<body>
+<section>
+    <div class="alert alert-danger" th:text="${errorMessage} ?: 'An error occurred'"></div>
+    <a th:href="@{/users}" class="btn btn-primary">Back to Users</a>
+</section>
+</body>
+</html>
