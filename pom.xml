@@ -86,11 +86,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.github.wimdeblauwe</groupId>
-			<artifactId>htmx-spring-boot-thymeleaf</artifactId>
-			<version>4.0.1</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.github.wimdeblauwe</groupId>-->
+<!--			<artifactId>htmx-spring-boot-thymeleaf</artifactId>-->
+<!--			<version>4.0.1</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-jdbc</artifactId>
